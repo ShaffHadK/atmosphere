@@ -12,20 +12,20 @@ _**Note:** After clicking the link wait for a minute as the backend needs time t
 
 **Atmosphere** is a complete, full-stack weather application designed to provide users with real-time weather intelligence, interactive geographical maps, localized media, and historical data tracking.
 
-This project successfully fulfills all requirements for both **Tech Assessment #1 and #2**, serving as a comprehensive Full Stack solution. It features a highly robust **FastAPI (Python)** backend connected to a **MySQL** database for complete CRUD functionality, paired with a premium **Flutter** frontend utilizing responsive Glassmorphic design with a sleek and modern look.
+This project successfully fulfills all requirements for both **Tech Assessment #1 and #2**, serving as a comprehensive Full Stack solution. It features a highly robust **FastAPI (Python)** backend connected to a **MySQL** database for complete CRUD functionality, paired with a premium **React** frontend utilizing responsive Glassmorphic design with a sleek and modern look.
 
 ### Key Features Implemented:
 
 * **Complete CRUD Operations (Backend & Frontend):** Users can search for a city, validate date ranges, and save the resulting forecast data to a MySQL database. Users can also Read, Update (edit the saved location/dates), and Delete their historical records seamlessly via the UI.
 * **Individual CSV Data Export:** Users can download their historical weather data directly to their device. The backend securely flattens the JSON arrays and streams a cleanly formatted CSV file, while the frontend handles local blob downloads.
 * **Dynamic API Integration:** Integrates with Open-Meteo for real-time, 24-hour, and historical 5-day forecasts, 24-hour forecasts, alongside dynamic URL generation for YouTube localized media based on the user's location.
-* **Interactive Data Visualization:** A custom-built Canvas Painter in Flutter dynamically renders historical temperatures into a beautiful, smoothed line graph without relying on heavy external charting libraries.
+* **Interactive Data Visualization:** A custom-built Canvas Painter in React dynamically renders historical temperatures into a beautiful, smoothed line graph without relying on heavy external charting libraries.
 
 ---
 
 ## 🚀 How to Run the Application
 
-This project is split into two distinct environments. Please ensure you have Python 3.9+ and the Flutter SDK installed on your machine.
+This project is split into two distinct environments. Please ensure you have Python 3.9+ and the Node.js installed on your machine.
 
 ### Part 1: Starting the Backend (FastAPI + MySQL)
 
@@ -44,23 +44,23 @@ pip install -r requirements.txt
 ** 3. Run the Server** Launch the FastAPI application using Uvicorn. SQLAlchemy will automatically connect to your MySQL instance and generate the ```weather_records``` table upon startup.
 
 ```bash
-uvicorn main:app --reload --port 8080
+uvicorn main:app --reload --port 8000
 ```
 
-_The backend will now be actively listening on ```http://localhost:8080```._
+_The backend will now be actively listening on ```http://localhost:8000```._
 
 ### Part 2: Starting the Frontend (Flutter Web)
 
 **1. Install Dependencies** Open a new terminal window, navigate to the frontend directory, and fetch the required Dart packages:
 
 ```bash
-cd frontend
-flutter pub get
+cd frontend-react
+npm install
 ```
 
 **2. Launch the Application** Because this application uses web-specific data URI generation for file exporting, please run the application using Chrome or Edge:
 
 ```bash
-flutter run -d chrome
+npm start
 ```
-_Note: Ensure your FastAPI backend server is actively running before attempting to search or save records in the Flutter UI._
+_Note: Ensure your FastAPI backend server is actively running before attempting to search or save records in the React UI._
